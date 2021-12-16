@@ -1,4 +1,4 @@
-Telecom Churn Prediction
+### Telecom Churn Prediction
 
 Any business wants to maximize the number of customers. To achieve this goal, it is important not only to try to attract new ones, but also to retain existing ones. Retaining a client will cost the company less than attracting a new one. In addition, a new client may be weakly interested in business services and it will be difficult to work with him, while old clients already have the necessary data on interaction with the service.
 
@@ -58,7 +58,7 @@ According to the feature importance analysis produced by the Random Forest algor
 
 6. Customer classtering
 
-7.Models
+7. Models
 ...... models have been constructed for application in the problem of this project, namely:
 
 Gradient Boosted
@@ -77,8 +77,9 @@ Their respective F1, AUC , measures are listed below:
   Precision: ....%  labeled as churn actually churned (... % were wrongly labeled as churn)
   Recall: ... % that actually churned were labeled as churn (.... % of churn users were labeled as non-churn)
   
-8Conclusion 
+8. Conclusion 
 
 9. Tools
 Jupyter notebook, Python 3.5.2 (Sklearn, Pandas, Numpy, Matplotlib and Seaborn)
-Code: .... (Link)
+
+Code: .... (github Link)
