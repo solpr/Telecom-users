@@ -1,4 +1,4 @@
-### Telecom Churn Prediction
+## Telecom Churn Prediction
 
 Any business wants to maximize the number of customers. To achieve this goal, it is important not only to try to attract new ones, but also to retain existing ones. Retaining a client will cost the company less than attracting a new one. In addition, a new client may be weakly interested in business services and it will be difficult to work with him, while old clients already have the necessary data on interaction with the service.
 
@@ -13,15 +13,15 @@ The task is to analyze the data and predict the churn of users (to identify peop
 - Building models for predicting the outflow (with justification for the choice of a particular model) based on tested hypotheses and identified relationships;
 - Comparison of the quality of the obtained models.
 
-1. Goal
+### 1. Goal
 
 Building models for predicting outflow.
 Which customers are likely to churn? What are the attributes that make you think so?
 
-2. Dataset
+### 2. Dataset
 There is data available on 5’986 customers. And this task is also available on kaggle (https://www.kaggle.com/radmirzosimov/telecom-users-dataset)
 
-2.1 The features:
+#### 2.1 The features:
 customerID - customer id
 gender - client gender (male / female)
 SeniorCitizen - is the client retired (1, 0)
@@ -44,10 +44,12 @@ TotalCharges - the total amount that the client paid for the services for the en
 Churn - whether there was a churn (Yes or No)
 
 
-3. Data Cleaning 
+### 3. Data Cleaning 
 
 
-4. Features Importance
+
+
+### 4. Features Importance
 Feature selection process of finding and selecting the most useful features in a dataset. Unnecessary features decrease training speed, the model interpretability and the generalization performance on the test set. Estimating the influence of a given feature to a model prediction is importante mainly in large datasets for performance gain by selecting only the most relevant ones.
 
 According to the feature importance analysis produced by the Random Forest algorithm, the following features had the highest predictive power:
@@ -56,9 +58,9 @@ According to the feature importance analysis produced by the Random Forest algor
 2.
 3.
 
-6. Customer classtering
+### 6. Customer classtering
 
-7. Models
+### 7. Models
 ...... models have been constructed for application in the problem of this project, namely:
 
 Gradient Boosted
@@ -77,9 +79,9 @@ Their respective F1, AUC , measures are listed below:
   Precision: ....%  labeled as churn actually churned (... % were wrongly labeled as churn)
   Recall: ... % that actually churned were labeled as churn (.... % of churn users were labeled as non-churn)
   
-8. Conclusion 
+### 8. Conclusion 
 
-9. Tools
+### 9. Tools
 Jupyter notebook, Python 3.5.2 (Sklearn, Pandas, Numpy, Matplotlib and Seaborn)
 
 Code: .... (github Link)
