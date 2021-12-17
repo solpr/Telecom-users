@@ -22,11 +22,11 @@ Which customers are likely to churn? What are the attributes that make you think
 There is data available on 5’986 customers. And this task is also available on kaggle (https://www.kaggle.com/radmirzosimov/telecom-users-dataset)
 
 #### 2.1 The features:
-customerID - customer id
-gender - client gender (male / female)
-SeniorCitizen - is the client retired (1, 0)
-Partner - is the client married (Yes, No)
-tenure - how many months a person has been a client of the company
+- customerID - customer id
+- gender - client gender (male / female)
+- SeniorCitizen - is the client retired (1, 0)
+- Partner - is the client married (Yes, No)
+- tenure - how many months a person has been a client of the company
 PhoneService - is the telephone service connected (Yes, No)
 MultipleLines - are multiple phone lines connected (Yes, No, No phone service)
 InternetService - client’s Internet service provider (DSL, Fiber optic, No)
