@@ -19,7 +19,8 @@ Building models for predicting outflow.
 Which customers are likely to churn? What are the attributes that make you think so?
 
 ### 2. Dataset
-There is data available on 5’986 customers. And this task is also available on kaggle (https://www.kaggle.com/radmirzosimov/telecom-users-dataset)
+
+There is data available on 5’986 customers. And this task is also available on Kaggle (https://www.kaggle.com/radmirzosimov/telecom-users-dataset)
 
 #### 2.1 The features:
 - customerID - customer id
@@ -46,42 +47,55 @@ There is data available on 5’986 customers. And this task is also available on
 
 ### 3. Data Cleaning 
 
+- changing data types
+- checking whether NaN's and/or Null values exist 
+- dropping useless columns
 
 
+### 4. Data Analysis and Features Importance
 
-### 4. Features Importance
 Feature selection process of finding and selecting the most useful features in a dataset. Unnecessary features decrease training speed, the model interpretability and the generalization performance on the test set. Estimating the influence of a given feature to a model prediction is importante mainly in large datasets for performance gain by selecting only the most relevant ones.
 
-According to the feature importance analysis produced by the Random Forest algorithm, the following features had the highest predictive power:
+- the composition of churn: churn rate= 26.5%
+- analysing demographic information with visualization tools: no difference in churn rate regarding gender; churn rate of senior citizens is almost double that of young citizens, customers with a partner churn less than customers with no partner
+- analysing customer account information — categorical variables: customers with month-to-month contracts have a higher churn rate; customers who opted for an electronic check as paying method are more likely to leave the company; customers subscribed to paperless billing churn more than those who are not subscribed
+- analysing customer account information — numerical variables: the churn rate tends to be larger when monthly charges are high; new customers (low tenure) are more likely to churn; clients with high total charges are less likely to leave the company
+- analysing services information - we do not expect phone attributes (PhoneService and MultipleLines) to have significant predictive power; clients with online security churn less than those without it; customers with no tech support tend to churn more often than those with tech support; customer with less extra packages tend to churn more
 
-1. 
-2.
-3.
+Mutual information — analysis of linear and nonlinear relationships between categorical columns - according to the mutual_info_score, the following features had the highest predictive power:
 
-### 6. Customer classtering
+1. Contract               
+2. OnlineSecurity         
+3. TechSupport            
+
 
 ### 7. Models
-...... models have been constructed for application in the problem of this project, namely:
 
-Gradient Boosted
-Random Forest
-AdaBoost
-Logistic Regression
+- set a baseline model: the rate of customers that did not churn (most frequent class 73.5%) was used as a baseline model to evaluate the quality of the models generated; the tested models should outperform the baseline capabilities to be considered for future predictions
+- split data into train/ test sets
+- define pipeline for preprocessing
+- use PyCaret to determine best model
+- create a Custom Metric in Pycart - Profit - to select the model that maximizes the business value; on average the monthly cost for customers that churn is higher around $15 per month; if we offer a $180 annual voucher to all the customers flagged by the model as potential churn, we gain $720 per customer in 1 year
+  Profit Custom Metric:
+  If we predict churn and the real value is churn, we gain ($720 - $180) per customer
+  If we predict churn and the real value is not churn, we loose ( - $180) per customer
 
+- select the model that maximizes the business value and the accuracy score
+- chose the logistic regression model and tune it with PyCaret
+- apply SHAP analysis to determine how significant each factor is in determining the final prediction the model (Logistic Regression) outputs; the following features had the highest predictive power:
 
+1. Monthly Charges
+2. Tenure
+3. Contract
 
-Their respective F1, AUC , measures are listed below:
-.....
-.....
- ...... produced the highest AUC and the following scores:
-
-  Accuracy: .... % labeled correctly
-  Precision: ....%  labeled as churn actually churned (... % were wrongly labeled as churn)
-  Recall: ... % that actually churned were labeled as churn (.... % of churn users were labeled as non-churn)
   
 ### 8. Conclusion 
+- if you apply the Logistic Regression tunned model identified by our analysis and try to retain customers with high probability of churn by offering them vouchers of $180, it's a good starting point and profitable strategy to maximize the business value
+- future recommendations: offer more personalized discounts: engage with the product managers, marketing and financial department to offer potential churn customers personalized discounts and packages to deter churning
+
 
 ### 9. Tools
-Jupyter notebook, Python 3.5.2 (Sklearn, Pandas, Numpy, Matplotlib and Seaborn)
+Jupyter notebook, Python 3.5.2 (Sklearn, Pandas, Numpy, Matplotlib and Seaborn), PyCaret, Shap Analysis
 
-Code: .... (github Link)
+Code: https://github.com/solpr/Telecom-users/blob/main/Telecom%20Churn%20Rate.ipynb
+
