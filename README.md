@@ -49,7 +49,7 @@ There is data available on 5’986 customers. And this task is also available on
 
 - changing data types
 - checking whether NaN's and/or Null values exist 
-- dropping useless columns
+- dropping columns, that are not relevant
 
 
 ### 4. Data Analysis and Features Importance
